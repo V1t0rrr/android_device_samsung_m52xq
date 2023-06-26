@@ -28,6 +28,19 @@ $(call inherit-product, vendor/samsung/m52xq/m52xq-vendor.mk)
 PRODUCT_PACKAGES += \
     init.m52xq.rc
 
+# QC common
+TARGET_COMMON_QTI_COMPONENTS := \
+perf \
+av \
+display \
+wfd \
+bt \
+audio \
+
+# WFD
+PRODUCT_PACKAGES += \
+    libwfdaac_vendor:32
+
 # Audio
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/audio/mixer_paths.xml:$(TARGET_COPY_OUT_VENDOR)/etc/mixer_paths.xml \

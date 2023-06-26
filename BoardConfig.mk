@@ -19,11 +19,12 @@ DEVICE_PATH := device/samsung/m52xq
 include device/samsung/sm7325-common/BoardConfigCommon.mk
 
 # Kernel
-TARGET_KERNEL_CONFIG        := vendor/lineage-m52xq_defconfig
+KERNEL_DEFCONFIG        := vendor/lineage-m52xq_defconfig
 BOARD_NAME                  := SRPUF17B001
 
 # Kernel modules
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules.load))
+TARGET_KERNEL_ADDITIONAL_FLAGS := fPIC
 
 # Recovery
 TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
